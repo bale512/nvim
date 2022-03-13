@@ -1,4 +1,5 @@
 {
+	"explorer.icon.enableNerdfont": true,
 	"coc.preferences.semanticTokensHighlights": false,
 	"coc.preferences.enableFloatHighlight": true,
 	"coc.preferences.snippetStatusText": "Ⓢ ",
@@ -61,8 +62,12 @@
 	"list.nextKeymap": "<C-e>",
 	"list.previousKeymap": "<C-u>",
 	"importCost.bundleSizeDecoration": "both",
-	"importCost.typescriptExtensions": ["\\.tsx?$"],
-	"importCost.javascriptExtensions": ["\\.jsx?$"],
+	"importCost.typescriptExtensions": [
+		"\\.tsx?$"
+	],
+	"importCost.javascriptExtensions": [
+		"\\.jsx?$"
+	],
 	"importCost.showCalculatingDecoration": true,
 	"importCost.debug": false,
 	"snippets.ultisnips.directories": [
@@ -108,16 +113,31 @@
 	"explorer.keyMappingMode": "none",
 	"explorer.buffer.showHiddenBuffers": false,
 	"explorer.keyMappings.global": {
-		"u": "nodePrev",
-		"e": "nodeNext",
+		"k": "nodePrev",
+		"j": "nodeNext",
 		"h": "toggleSelection",
 		"<tab>": "actionMenu",
 		"gl": "expandRecursive",
 		"gh": "collapseRecursive",
-		"i": ["wait", "expandable?", "expand", "open"],
-		"<cr>": ["wait", "expandable?", "cd", "open"],
+		"i": [
+			"wait",
+			"expandable?",
+			"expand",
+			"open"
+		],
+		"<cr>": [
+			"wait",
+			"expandable?",
+			"cd",
+			"open"
+		],
 		"I": "open:vsplit",
-		"o": ["wait", "expanded?", "collapse", "expand"],
+		"o": [
+			"wait",
+			"expanded?",
+			"collapse",
+			"expand"
+		],
 		"O": "open:tab",
 		"n": "collapse",
 		"l": "gotoParent",
@@ -128,7 +148,6 @@
 		"pp": "pasteFile",
 		"dD": "deleteForever",
 		"a": "addFile",
-		"k": "addFile",
 		"M": "addDirectory",
 		"cw": "rename",
 		".": "toggleHidden",
@@ -185,11 +204,23 @@
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
 		"email": "languagetool",
-		"markdown": ["write-good", "markdownlint"],
+		"markdown": [
+			"write-good",
+			"markdownlint"
+		],
 		"sh": "shellcheck",
-		"elixir": ["mix_credo", "mix_credo_compile"],
-		"eelixir": ["mix_credo", "mix_credo_compile"],
-		"php": ["phpstan", "psalm"]
+		"elixir": [
+			"mix_credo",
+			"mix_credo_compile"
+		],
+		"eelixir": [
+			"mix_credo",
+			"mix_credo_compile"
+		],
+		"php": [
+			"phpstan",
+			"psalm"
+		]
 	},
 	"diagnostic-languageserver.formatFiletypes": {
 		"elixir": "mix_format",
@@ -198,19 +229,27 @@
 	"languageserver": {
 		"lua": {
 			"command": "lua-lsp",
-			"filetypes": ["lua"]
+			"filetypes": [
+				"lua"
+			]
 		},
 		"swift": {
 			"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
 			"args": [],
-			"filetypes": ["swift"],
+			"filetypes": [
+				"swift"
+			],
 			"initializationOptions": {},
 			"settings": {}
 		},
 		"golang": {
 			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"],
+			"rootPatterns": [
+				"go.mod"
+			],
+			"filetypes": [
+				"go"
+			],
 			"initializationOptions": {
 				"gocodeCompletionEnabled": true,
 				"diagnosticsEnabled": true,
@@ -219,14 +258,30 @@
 		},
 		"bash": {
 			"command": "bash-language-server",
-			"args": ["start"],
-			"filetypes": ["sh"],
+			"args": [
+				"start"
+			],
+			"filetypes": [
+				"sh"
+			],
 			"ignoredRootPaths": []
 		},
 		"ccls": {
 			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls", ".ccls-root", "compile_commands.json", ".git/", ".hg/"],
+			"filetypes": [
+				"c",
+				"cpp",
+				"cuda",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				".ccls-root",
+				"compile_commands.json",
+				".git/",
+				".hg/"
+			],
 			"initializationOptions": {
 				"cache": {
 					"directory": "/tmp/ccls"

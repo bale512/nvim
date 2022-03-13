@@ -128,13 +128,6 @@ noremap S :w<CR>
 noremap <LEADER>rc :e $HOME/.config/nvim/init.vim<CR>
 noremap <LEADER>rv :e .nvimrc<CR>
 
-" Undo operations
-noremap l u
-
-" Insert Key
-noremap k i
-noremap K I
-
 " make Y to copy till the end of the line
 nnoremap Y y$
 
@@ -169,33 +162,29 @@ noremap <silent> <LEADER>o za
 " ===
 " New cursor movement (the default arrow keys are used for resizing windows)
 "     ^
-"     u
-" < n   i >
-"     e
+"     k 
+" < h    l>
+"     j
 "     v
-noremap <silent> u k
-noremap <silent> n h
-noremap <silent> e j
-noremap <silent> i l
-noremap <silent> gu gk
-noremap <silent> ge gj
-noremap <silent> \v v$h
+"noremap <silent> gu gk
+"noremap <silent> ge gj
+"noremap <silent> \v v$h
 
 " U/E keys for 5 times u/e (faster navigation)
-noremap <silent> U 5k
-noremap <silent> E 5j
+noremap <silent> K 5k
+noremap <silent> J 5j
 
 " N key: go to the start of the line
 noremap <silent> N 0
 " I key: go to the end of the line
-noremap <silent> I $
+noremap <silent> M $
 
 " Faster in-line navigation
 noremap W 5w
 noremap B 5b
 
 " set h (same as n, cursor left) to 'end of word'
-noremap h e
+" noremap h e
 
 " Ctrl + U or E will move up/down the view port without moving the cursor
 noremap <C-U> 5<C-y>
@@ -239,20 +228,20 @@ noremap = n
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
 noremap <LEADER>w <C-w>w
-noremap <LEADER>u <C-w>k
-noremap <LEADER>e <C-w>j
-noremap <LEADER>n <C-w>h
-noremap <LEADER>i <C-w>l
+noremap <LEADER>k <C-w>k
+noremap <LEADER>j <C-w>j
+noremap <LEADER>h <C-w>h
+noremap <LEADER>l <C-w>l
 noremap qf <C-w>o
 
 " Disable the default s key
 noremap s <nop>
 
 " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
-noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
-noremap se :set splitbelow<CR>:split<CR>
-noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
-noremap si :set splitright<CR>:vsplit<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap sj :set splitbelow<CR>:split<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
 
 " Resize splits with arrow keys
 noremap <up> :res +5<CR>
@@ -305,7 +294,7 @@ nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q<CR>
 " Opening a terminal window
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 
-" Press space twice to jump to the next '<++>' and edit it
+" Press space twice to jump to the next '' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " Spelling Check with <space>sc
@@ -315,7 +304,6 @@ noremap <LEADER>sc :set spell!<CR>
 noremap ` ~
 
 noremap <C-c> zz
-
 " Auto change directory to current dir
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -690,7 +678,7 @@ function! Show_documentation()
 		call CocAction('doHover')
 	endif
 endfunction
-nnoremap <LEADER>h :call Show_documentation()<CR>
+nnoremap <LEADER>H :call Show_documentation()<CR>
 " set runtimepath^=~/.config/nvim/coc-extensions/coc-flutter-tools/
 " let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 " let $NVIM_COC_LOG_LEVEL = 'debug'
@@ -717,7 +705,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
-nmap tt :CocCommand explorer<CR>
+nmap ff :CocCommand explorer<CR>
 " coc-translator
 nmap ts <Plug>(coc-translator-p)
 " Remap for do codeAction of selected region
@@ -1299,7 +1287,6 @@ vmap <LEADER>cn g>
 nmap <LEADER>cu g<c
 vmap <LEADER>cu g<
 
-
 " ===
 " === vim-move
 " ===
@@ -1309,7 +1296,7 @@ let g:move_key_modifier = 'C'
 " ===
 " === any-jump
 " ===
-nnoremap j :AnyJump<CR>
+nnoremap <LEADER><LEADER>j :AnyJump<CR>
 let g:any_jump_window_width_ratio  = 0.8
 let g:any_jump_window_height_ratio = 0.9
 
